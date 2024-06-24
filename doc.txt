@@ -1,0 +1,24 @@
+
+npx prisma init
+
+//Create database or table
+
+npx prisma migrate dev
+
+Name: initial
+
+// Visualizar database
+npx prisma studio
+
+// Agenda
+profiles
+=> id
+=> firstName
+=> lastName
+=> gender
+=> dateBirth
+=> tel
+=> image
+=> idUser
+=> dataRgt
+=> dataUpdt

@@ -1,0 +1,26 @@
+
+<!--==================== habilidade ====================-->
+    <section class="habilidade section" id="habilidades">
+        <h2 class="section__title">
+            Habilidade
+        </h2>
+
+        <div class="habilidade__container container">
+            <div class="habilidade__content grid">
+
+                {{#each habilidade}}
+
+                <article class="habilidade__card">
+                    <img src="/svg/{{ slug }}.svg" alt="image" class="habilidade__img">
+
+                    <h2 class="habilidade__title">{{ tecnologia }}</h2>
+
+                </article>
+
+                {{/each }}
+
+            </div>
+
+        </div>
+
+    </section>

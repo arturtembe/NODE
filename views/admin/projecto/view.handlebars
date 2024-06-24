@@ -1,0 +1,33 @@
+
+{{>admin/projecto/_header }}
+
+<main class="main">
+
+    <!--==================== PROJECTO ====================-->
+    
+    <section class="card-list">
+    
+    {{#each projecto}}
+        
+        <a class="card-item border-radius" id="{{ id }}">
+            <img src="{{ logotipo }}" alt="{{ titulo }}">
+            {{#each projecto_habilidade}}
+                <span class="developer">{{ habilidade.tecnologia }}</span>
+            {{/each }}
+
+            <h3>{{ titulo }}</h3>
+            
+            <div class="arrow">
+                <button class="arraw-btn arraw-btn-edit" data-href="/admin/projecto/edit/{{ id }}">Editar</button>
+                <button type="button" class="arraw-btn arraw-btn-delete" data-id="{{ id }}">Remover</button>
+            </div>
+
+        </a>
+
+    {{/each  }}
+
+    </section>
+
+</main>
+
+<script type="module" src="/js/projecto/viewForm.js"></script>

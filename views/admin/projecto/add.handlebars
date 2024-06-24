@@ -1,0 +1,80 @@
+
+<main class="main" style="padding: 2% 0; overflow-y: auto;">
+
+    {{!-- =========== FORM ======= --}}
+
+    <section class="row-form"  style="overflow: overflow-y: auto;">
+
+        <form class="addform" id="addform">
+
+            <h1 class="header-form">
+                Adiconar
+            </h1>
+            
+            <div class="box-form">
+                <label>Titulo</label>
+                <input type="text" id="titulo" name="titulo"
+                required>
+            </div>
+            <div class="box-form">
+                <label>GIThub</label>
+                <input type="text" id="github" name="github"
+                >
+            </div>
+            <div class="box-form">
+                <label>Live</label>
+                <input type="text" id="live" name="live"
+                >
+            </div>
+            <div class="box-form">
+                <label>Estado</label>
+                <select id="estado" name="estado">
+                    <option value="concluido">Concluido</option>
+                    <option value="em andamento">Em andamento</option>
+                    <option value="pendente">Pendente</option>
+                </select>
+            </div>
+            <div class="box-form">
+                <label>Destaque</label>
+                <select name="destaque" id="destaque">
+                    <option value="false">Nao</option>
+                    <option value="true">Sim</option>
+                </select>
+            </div>
+            <div class="box-form">
+                <label>Logotipo</label>
+                <input type="text" id="files" name="files"
+                required>
+            </div>
+            <div class="box-form">
+                <label>Images</label>
+                <input type="text" id="images" name="images"
+                >
+            </div>
+            <div class="box-form">
+                <fieldset>
+                    <legend>Tecnologia</legend>
+
+                    <div class="box-tecn">
+                        {{#each habilidade}}
+                            <button type="button" class="btn btn-add-tecn"
+                            data-id="{{ id }}" id="{{ id }}">{{ tecnologia }}</button>
+                        {{/each }}
+                    </div>
+
+                </fieldset>
+
+            </div>
+
+            <div class="box-form-buttons">
+                <button type="submit" class="btn btn-add">INSERT</button>
+                <button type="reset" class="btn btn-reset">CANCEL</button>
+            </div>
+            
+        </form>
+
+    </section>
+
+</main>
+
+<script type="module" src="/js/projecto/addForm.js"></script>

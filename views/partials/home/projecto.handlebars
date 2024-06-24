@@ -1,0 +1,55 @@
+
+<!--==================== PROJECTO ====================-->
+
+<section class="projecto section" id="projectos">
+    
+    <h2 class="section__title">
+        Projecto
+    </h2>
+
+    <div class="articleProject">
+            
+        <div class="article-list">
+            
+            {{#each projecto}}
+                
+                <a class="article-item border-radius" id="{{ id }}">
+                    <img src="{{ logotipo }}" alt="{{ titulo }}">
+                    {{#each projecto_habilidade}}
+                        <span class="developer">{{ habilidade.tecnologia }}</span>
+                    {{/each }}
+
+                    <h3>{{ titulo }}</h3>
+                    
+                    <div class="arrow">
+                        
+                        {{#if github}}
+                            <button class="arraw-btn arraw-btn-github" data-href="{{ github }}">Github</button>
+                        {{else }}
+                        {{/if }}
+                        
+                        {{#if live}}
+                            <button class="arraw-btn arraw-btn-live" data-href="{{ live }}">Live</button>
+                        {{else }}
+                        {{/if }}
+                    </div>
+
+                </a>
+
+            {{/each  }}
+
+        </div>
+
+    </div>
+
+    <div class="control-projecto">
+        <a href="/projecto">
+            <button class="btn-control-projecto">Ver Mais</button>
+        </a> 
+    </div>
+
+</section>
+
+<script src="/js/projecto/acessoGIT_LIVE.js"></script>
+
+

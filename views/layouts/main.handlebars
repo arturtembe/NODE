@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ head.title }}</title>
+    <meta name="description" content="{{ head.description }}"/>
+    <meta name="keywords" content="{{ head.keywords }}">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+
+    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="/css/remixicon.min.css">
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="/css/swiper-bundle.min.css">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/formulario.css">
+    <link rel="stylesheet" href="/css/card.css">
+    <link rel="stylesheet" href="/css/projecto.css">
+    <link rel="stylesheet" href="/css/contacto.css">
+</head>
+<body>
+
+    {{{body}}}
+
+    <script>
+
+        window.addEventListener('pageshow', (event) => {
+            if (event.persisted) {
+                console.log('This page was restored from the bfcache.');
+                location.reload();
+            } else {
+                console.log('This page was loaded normally.');
+            }
+        });
+
+    </script> 
+    
+</body>
+</html>

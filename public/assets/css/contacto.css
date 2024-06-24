@@ -1,0 +1,273 @@
+
+.contact .box-form {
+    display: flex;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.contact .box-form .findme {
+    width: 30%;
+    box-shadow: 4px 4px 3px 4px #020e1a;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 100px 0;
+    margin-top: 50px;
+    overflow-y: hidden;
+    margin: 50px 5px 0 5px;
+    background-color: var(--color-green-black);
+
+    & h4{
+        color: #fff;
+        text-align: center;
+        font-size: 1.5rem;
+        width: 100%;
+        padding: 20px 0;
+        word-wrap: break-word;
+    }
+    & p{
+        text-align: center;
+        padding: 10px 20px;
+        color: #fff;
+        width: 100%;
+        word-wrap: break-word;
+    }
+}
+
+.contact .box-form .form {
+    background-color: var(--color-green-black);
+    padding: 10px 25px;
+    width: 50%;
+    box-shadow: 4px 4px 3px 4px #020e1a;
+    border-radius: 10px;
+    margin: 50px 5px 0 5px;
+}
+.contact .box-form .form .box-input-form {
+    padding: 0 10px 10px 10px;
+    width: 100%;
+    position: relative;
+}
+.contact .box-form .form .box-input-form.hidden {
+    display: block;
+}
+.contact .box-form .form .box-input-form h1 {
+    width: 100%;
+    padding: 0px 20px;
+    font-size: 52px;
+    text-align: center;
+    color: #fff;
+}
+.contact .box-form .form .box-input-form .msg {
+    display: block;
+    padding: 10px;
+    font-size: 17px;
+    color: #fff;
+    border-radius: 0;
+    font-weight: bold;
+}
+.contact .box-form .form .box-input-form .msg.error {
+    background-color: rgb(248, 140, 140);
+}
+.contact .box-form .form .box-input-form .msg.sucesso {
+    background-color: rgb(129, 165, 250);
+}
+.contact .box-form .form .box-input-form label {
+    display: none;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 24px;
+    color: #fff;
+}
+.contact .box-form .form .box-input-form input {
+    width: 100%;
+    padding: 15px 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    outline: none;
+    background-color: var(--color-blue-darken);
+    color: var(--white-color);
+}
+.contact .box-form .form .box-input-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    outline: none;
+    height: 120px;
+    background-color: #081b29;
+    color: #fff;
+}
+.contact .box-form .form .box-input-form button {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 19px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition: 0.5s;
+    padding: 15px 0;
+    outline: none;
+}
+.contact .box-form .form .box-input-form button:nth-child(2) {
+    margin-top: 10px;
+}
+.contact .box-form .form .box-input-form button:nth-child(2).active {
+    display: none;
+}
+.contact .box-form .form .box-input-form button:hover {
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid #00abf0;
+}
+.contact .box-form .form .box-input-form button:nth-child(1):before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--first-color-darken);
+    z-index: -1;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition: 0.5s;
+}
+.contact .box-form .form .box-input-form button:nth-child(2):before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #f00;
+    z-index: -1;
+
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition: 0.5s;
+}
+.contact .box-form .form .box-input-form button:hover::before {
+    width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+    .contact .box-form {
+        padding: 25px;
+        height: 100%;
+    }
+    .contact .box-form .findme {
+        width: 50%;
+    }
+    .contact .box-form .form {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .contact .box-form {
+        width: 100%;
+        height: 100%;
+    }
+    .contact .box-form .findme {
+        width: 100%;
+    }
+    .contact .box-form .form {
+        width: 100%;
+    }
+}
+
+/* ============ MESSAGE DE RESPOSTA ========== */
+
+#card-message {
+    position: relative;
+    top: 110px;
+    width: 320px;
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-family: "Source Sans Pro", sans-serif;
+}
+#upper-side {
+    padding: 2em;
+    background-color: #8BC34A;
+    display: block;
+    color: #fff;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+#checkmark {
+    font-weight: lighter;
+    fill: #fff;
+    margin: -3.5em auto auto 20px;
+}
+#status {
+    font-weight: lighter;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1em;
+    margin-top: -0.2em;
+    margin-bottom: 0;
+}
+#lower-side {
+    padding: 2em 2em 5em 2em;
+    background: #fff;
+    display: block;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+#message-contact {
+    margin-top: -0.5em;
+    color: #757575;
+    letter-spacing: 1px;
+}
+#contBtn {
+    position: relative;
+    top: 1.5em;
+    text-decoration: none;
+    background: #8bc34a;
+    color: #fff;
+    margin: auto;
+    padding: 0.8em 3em;
+    -webkit-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+    -moz-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+    box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+    border-radius: 25px;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+#contBtn:hover {
+    -webkit-box-shadow: 0px 15px 30px rgba(60, 60, 60, 0.4);
+    -moz-box-shadow: 0px 15px 30px rgba(60, 60, 60, 0.4);
+    box-shadow: 0px 15px 30px rgba(60, 60, 60, 0.4);
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
