@@ -1,0 +1,9 @@
+portfolio_prisma_sqlite/node_modules
+# Keep environment variables out of version control
+portfolio_prisma_sqlite/test-results/
+portfolio_prisma_sqlite/playwright-report/
+portfolio_prisma_sqlite/blob-report/
+portfolio_prisma_sqlite/playwright/.cache/
+
+portfolio_prisma_sqlite/.env
+portfolio_prisma_sqlite/.gitignore
