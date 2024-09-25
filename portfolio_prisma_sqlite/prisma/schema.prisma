@@ -1,0 +1,71 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+
+  // relationMode = "prisma"
+}
+
+
+// Habilidade
+model Habilidade{
+  id String @id @default(uuid())
+  tecnologia String @unique
+  slug String @unique
+  destaque Boolean
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  projecto_habilidade ProjectoHabilidade[] @relation("habilidade")
+
+  @@map("habilidades")
+}
+
+// ProjectoRent 
+model ProjectoHabilidade{
+  habilidade Habilidade @relation("habilidade", fields: [habilidadeId], references: [id], onDelete: Cascade, onUpdate: Restrict)
+  habilidadeId String
+  projecto Projecto @relation("projecto", fields: [projectoId], references: [id], onDelete: Restrict, onUpdate: Restrict)
+  projectoId String
+  @@id([habilidadeId,projectoId])
+  
+  @@map("projectoHabilidade")
+}
+
+model Projecto{
+  id String @id @default(uuid())
+  titulo String
+  slug String @unique
+  github String 
+  live String
+  logotipo String
+  estado String
+  destaque Boolean
+  desc String
+  images String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  projecto_habilidade ProjectoHabilidade[] @relation("projecto")
+
+  @@map("projectos")
+}
+
+model Contacto{
+  id String @id @default(uuid())
+  nome String
+  email String 
+  message String 
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@map("contactos")
+}
+

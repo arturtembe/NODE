@@ -1,0 +1,50 @@
+
+<main class="main">
+
+    {{!-- =========== FORM ======= --}}
+
+    <section class="row-form">
+
+        <form class="addform" id="editform">
+
+            <h1 class="header-form">
+                Editar
+            </h1>
+
+            <input type="hidden" name="idForm" id="idForm" 
+            value="{{ habilidade.id }}">
+            
+            <div class="box-form">
+                <label>Tecnologia</label>
+                <input type="text" id="tecnologia" name="tecnologia"
+                required value="{{ habilidade.tecnologia }}"
+                class="toUppercase" readonly>
+            </div>
+
+            <div class="box-form">
+                <label>Destaque</label>
+                <select name="destaque" id="destaque">
+                    {{#if habilidade.destaque}}
+                        <option value="false">Nao</option>
+                        <option value="true" selected>Sim</option>
+                    {{else }}
+                        <option value="false" selected>Nao</option>
+                        <option value="true">Sim</option>
+                    {{/if }}
+                    
+                </select>
+            </div>
+
+            <div class="box-form-buttons">
+                <button type="submit" class="btn btn-add">UPDATE</button>
+                <button type="reset" class="btn btn-reset">CANCEL</button>
+            </div>
+            
+        </form>
+
+    </section>
+
+</main>
+
+
+<script type="module" src="/js/habilidade/editForm.js"></script>

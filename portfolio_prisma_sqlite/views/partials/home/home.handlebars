@@ -1,0 +1,55 @@
+
+    <section class="home section" id="inicio">
+        <div class="home__container container grid">
+            <div class="home__data">
+                <h1 class="home__title">
+                    Ola, Eu sou 
+                    <span class="home__title_animated"></span>
+                </h1>
+                
+                <p class="home__description">
+                    <span>
+                        Sou um desenvolvedor apaixonado pelo que eu faco.
+                        Por isso estou sempre querendo aprender algo novo 
+                        que me ajude a ser um desenvolvedor cada vez melhor.
+                    </span>
+                    <br>
+                    <span>
+                        Tenho experiencia em criar experiencias de 
+                        usuario ricas e intuitivas usando <b>HTML</b>, <b>CSS</b>,
+                        <b>JAVASCRIPT</b>, <b>TYPESCRIPT</b>, <b>REACT</b> ou <b>NEXT</b>, 
+                        <b>NODE</b>, <b>PHP</b>, <b>VUE</b>, <b>ANGULAR</b>, <b>LARAVEL</b>  e 
+                        actualmente estou estudando <b>React Native</b>, <b>JAVA</b> e <b>SPRING BOOT</b>.
+                    </span>
+                </p>
+
+                <div class="home__buttons">
+                    <a href="https://github.com/arturtembe/" class="button">GITHub</a>
+                    <a href="https://www.linkedin.com/in/artur-jaime-tembe-770a71216/" class="button button__ghost">LINKED</a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ----- TYPING JS Link ----- -->
+    <script src="/js/typed.umd.js"></script>
+
+    <script>
+
+/* ----- TYPING EFFECT ----- */
+    var typingEffect = new Typed(".home__title_animated",{
+        strings : [
+                    "Artur Tembe",
+                    "Desenvolvedor Jr. Frontend",
+                    "Desenvolvedor Jr. Backend",
+                    "Desenvolvedor Jr. Full-Stack",
+                    "Artur Tembe"],
+        loop : false,
+        typeSpeed : 100, 
+        backSpeed : 80,
+        backDelay : 1000
+    })
+
+    </script>

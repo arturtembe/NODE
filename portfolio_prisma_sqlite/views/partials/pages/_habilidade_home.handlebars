@@ -1,0 +1,40 @@
+
+<!--==================== habilidade ====================-->
+    <section class="habilidade section" id="habilidades">
+        
+        <div class="card-header">
+
+            <div class="card-header-visible">
+                
+                <h2 class="section__title mtb-header">
+                    Habilidade
+                </h2>
+
+                <form method="get" class="searchForm" id="searchForm"
+                style="display: none;">
+                    <input type="text" name="search" id="search"
+                    placeholder="Filtrar...">
+                </form>
+            </div>
+
+        </div>
+
+        <div class="habilidade__container container">
+            <div class="habilidade__content grid">
+
+                {{#each habilidade}}
+
+                <article class="habilidade__card">
+                    <img src="/svg/{{ slug }}.svg" alt="image" class="habilidade__img">
+
+                    <h2 class="habilidade__title">{{ tecnologia }}</h2>
+
+                </article>
+
+                {{/each }}
+
+            </div>
+
+        </div>
+
+    </section>

@@ -1,0 +1,172 @@
+{
+    "openapi": "3.0.0",
+    "info":{
+        "title": "API de Estudo",
+        "description": "Essa API e uma API para estudos",
+        "contact":{
+            "name": "Support",
+            "email": "turazdev@gmail.com"
+        },
+        "version": "1.0.0",
+        "x-logo": {
+            "url": "16042024092848.jpg"
+        }
+    },
+    "paths":{
+        "/product": {
+            "get":{
+                "description":"Essa routa para consulta dos productos",
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref":"#/components/schemas/ResponseProduct"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Ocorreu um erro ao consultar"
+                    }
+                }
+            }
+        },
+        "/product/{id}": {
+            "get":{
+                "description":"Consulta de um producto especifico por ID",
+                "parameters":[
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID do producto",
+                        "required": true,
+                        "type": "string",
+                        "format": "uuid"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref":"#/components/schemas/ResponseProduct"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Producto nao encontrado"
+                    }
+                }
+            }
+        },
+        "/product/create": {
+            "tags":["product"],
+            "post": {
+                "description":"Essa routa para cadastro do producto",
+                "security":[
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "requestBody": {
+                    "description":"Dados necessario para cadastro do producto",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RequestProduct"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Cadastro realizado com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref":"#/components/schemas/ResponseProduct"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Ocorreu um erro no cadastro"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "RequestProduct": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Nome do producto a ser cadastrado",
+                        "example": "Manga"
+                    },
+                    "price": {
+                        "type": "number",
+                        "description": "Preco do producto a ser cadastrado",
+                        "example": 287.9
+                    },
+                    "retailer": {
+                        "enum": ["APP01","APP02","APP03"],
+                        "description": "Retailer do producto a ser cadastrado",
+                        "example": "APP02"
+                    },
+                    "amountInStock": {
+                        "type": "number",
+                        "description": "Amount do producto a ser cadastrado",
+                        "example": 25
+                    }
+                },
+                "required":["name","price","retailer","amountInStock"]
+            },
+            "ResponseProduct": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Nome do producto a ser cadastrado",
+                        "example": "Manga"
+                    },
+                    "price": {
+                        "type": "number",
+                        "description": "Preco do producto a ser cadastrado",
+                        "example": 255.7
+                    },
+                    "retailer": {
+                        "enum": ["APP01","APP02","APP03"],
+                        "description": "Retailer do producto a ser cadastrado",
+                        "example": "APP02"
+                    },
+                    "amountInStock": {
+                        "type": "number",
+                        "description": "Amount do producto a ser cadastrado",
+                        "example": 250
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "Id do producto cadastrado",
+                        "format": "uuid"
+                    }
+                }
+            }
+        },
+        "securitySchemes": {
+            "bearerAuth": {
+                "description": "Autenticacao utilizando JWT",
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }
+    }
+}
